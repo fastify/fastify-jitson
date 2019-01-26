@@ -1,0 +1,32 @@
+{
+  "name": "fastify-jitson",
+  "version": "1.0.0",
+  "description": "A fastify plugin to parse the request body using jitson.",
+  "main": "fastify-jitson.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-jitson.git"
+  },
+  "keywords": [
+    "fastify",
+    "application/json"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-jitson/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-jitson#readme",
+  "dependencies": {
+    "fastify-plugin": "^1.0.0",
+    "jitson": "^1.0.0"
+  },
+  "devDependencies": {
+    "fastify": "2.0.0-rc.3",
+    "request": "^2.88.0",
+    "tap": "^12.4.0"
+  }
+}
