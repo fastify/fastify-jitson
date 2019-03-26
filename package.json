@@ -1,0 +1,50 @@
+{
+  "name": "fastify-jitson",
+  "version": "1.0.0-alpha.0",
+  "description": "A fastify plugin to use jitson as default parser",
+  "main": "plugin.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/*.js",
+    "lint": "standard --verbose | snazzy",
+    "bench": "branchcmp -r 2 -g -s \"npm run benchmark\"",
+    "benchmark": "npx concurrently -k -s first \"node ./example/jitson.js\" \"npm run benchmark:request\"",
+    "benchmark:core": "npx concurrently -k -s first \"node ./example/core.js\" \"npm run benchmark:request\"",
+    "benchmark:request": "npx autocannon -c 100 -d 5 -p 10 -m POST -b '{ \"hello\": \"world\" }' -H Content-Type=application/json localhost:3000/"
+  },
+  "precommit": [
+    "lint",
+    "test"
+  ],
+  "dependencies": {
+    "fastify-plugin": "^1.5.0",
+    "jitson": "^1.0.0"
+  },
+  "devDependencies": {
+    "autocannon": "^3.2.1",
+    "branch-comparer": "^0.4.0",
+    "concurrently": "^4.1.0",
+    "fastify": "^2.1.0",
+    "pre-commit": "^1.2.2",
+    "snazzy": "^8.0.0",
+    "standard": "^12.0.1",
+    "tap": "^12.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-jitson.git"
+  },
+  "keywords": [
+    "fastify",
+    "jitson",
+    "plugin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-jitson/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-jitson#readme"
+}
